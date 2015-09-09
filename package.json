@@ -9,10 +9,13 @@
     "drivers",
     "nodatabase"
   ],
-  "author": {
-      "name": "Pablo Andrés Dorado Suárez",
-      "mail": "pandres95@gentebool.com",
-      "url": "http://community.gentebool.com/pandres95"
+  "author": "Pablo Andrés Dorado Suárez <pandres95@gentebool.com> (http://community.gentebool.com/pandres95)",
+  "license": "GPL-3.0",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "license": "GPL-3.0"
+  "dependencies": {
+    "async": "^1.4.2",
+    "mongoose": "^4.1.6"
+  }
 }
