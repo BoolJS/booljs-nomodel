@@ -1,0 +1,18 @@
+{
+  "name": "booljs-nomodel",
+  "version": "0.0.1",
+  "description": "[![Build Status](https://travis-ci.org/BoolJS/booljs-nomodel.svg?branch=master)](https://travis-ci.org/BoolJS/booljs-nomodel) [![Dependencies status for bool.js](https://david-dm.org/booljs/booljs-nomodel.svg)](https://david-dm.org/booljs/booljs-nomodel) [![devDependency Status](https://david-dm.org/booljs/booljs-nomodel/dev-status.svg)](https://david-dm.org/booljs/booljs-nomodel#info=devDependencies) [![Code Climate](https://codeclimate.com/github/BoolJS/booljs-nomodel/badges/gpa.svg)](https://codeclimate.com/github/BoolJS/booljs-nomodel) [![Inline docs](http://inch-ci.org/github/booljs/booljs-nomodel.svg?branch=master)](http://inch-ci.org/github/booljs/booljs-nomodel)",
+  "main": "index.js",
+  "keywords": [
+    "bool.js",
+    "database",
+    "drivers",
+    "nodatabase"
+  ],
+  "author": {
+      "name": "Pablo Andrés Dorado Suárez",
+      "mail": "pandres95@gentebool.com",
+      "url": "http://community.gentebool.com/pandres95"
+  },
+  "license": "GPL-3.0"
+}
