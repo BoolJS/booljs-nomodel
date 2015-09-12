@@ -25,10 +25,6 @@ describe('Dog', function () {
 
     describe('Model', function () {
 
-        before(function () {
-            return q.nbind(Dog.collection.remove, Dog.collection)();
-        });
-
         it('retrieves an empty list', function () {
             return expect(Dog.list()).to.eventually.have.length(0);
         });
@@ -37,10 +33,6 @@ describe('Dog', function () {
 
     describe('DAO', function () {
 
-        before(function () {
-            return q.nbind(Dog.collection.remove, Dog.collection)();
-        });
-
         it('retrieves an empty list', function () {
             return expect(dogDao.list()).to.eventually.have.length(0);
         });
@@ -48,10 +40,6 @@ describe('Dog', function () {
     });
 
     describe('Controller', function () {
-
-        before(function () {
-            return q.nbind(Dog.collection.remove, Dog.collection)();
-        });
 
         it('retrieves an empty list', function () {
 
