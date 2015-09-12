@@ -3,6 +3,9 @@
   "version": "0.0.2",
   "description": "",
   "main": "index.js",
+  "scripts": {
+      "test": "mocha --recursive --timeout 5000 test"
+  },
   "keywords": [
     "bool.js",
     "database",
