@@ -11,7 +11,7 @@ module.exports = new API.DatabaseLoader('booljs-nomodel', {
         var fetch = q.nbind(async.forEachOfSeries, async);
 
         return fetch(models, function (path, model, next) {
-            var Model = require(model);
+            var Model = require(path);
 
             var _model = function () {
                 return new Model(_instance.getComponents());
