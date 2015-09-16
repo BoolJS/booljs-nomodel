@@ -1,17 +1,9 @@
-/* jshint node: true, laxcomma: true */
 'use strict';
 
-var async = require('async');
+var async   = require('async')
+,   API     = require('booljs-api');
 
-function wrapModel(_instance, model) {
-    var Model = require(model);
-
-    return function () {
-        return new Model(_instance.getComponents());
-    };
-}
-
-module.exports = {
+module.exports = new API.DatabaseLoader('booljs-nomodel', {
     openDatabase: function (config) {
         return q.resolve();
     },
@@ -19,12 +11,16 @@ module.exports = {
         var fetch = q.nbind(async.forEachOfSeries, async);
 
         return fetch(models, function (path, model, next) {
-            var _model = wrapModel(_instance, path);
+            var Model = require(model);
 
+            var _model = function () {
+                return new Model(_instance.getComponents());
+            };
             _instance.insertComponent(
                 model, _model, _instance.getComponents().models
             );
+
             next();
         });
     }
-};
+});
