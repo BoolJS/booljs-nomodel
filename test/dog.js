@@ -12,8 +12,8 @@ describe('Dog', function () {
     var expect      = chai.expect;
 
     before(function () {
-        return booljs('com.example.api')
-        .setBase('example').setDatabaseLoader(require('..'))
+        return booljs('com.example.api', [ require.resolve('..') ])
+        .setBase('example').setDatabaseLoader('booljs-nomodel')
         .run().then(function (api) {
             app = api.app;
             Dog = new app.models.Dog();
