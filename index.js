@@ -1,7 +1,13 @@
 'use strict';
 
-var async   = require('async')
-,   API     = require('bool.js/api');
+var async   = require('async');
+
+var API;
+try {
+    API = require('bool.js/api');
+} catch (e) {
+    API = require('booljs-api');
+}
 
 module.exports = new API.DatabaseLoader('booljs-nomodel', {
     openDatabase: function (config) {
