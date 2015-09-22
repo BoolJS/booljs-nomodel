@@ -1,6 +1,6 @@
 {
   "name": "booljs-nomodel",
-  "version": "0.0.5",
+  "version": "0.1.0",
   "description": "No database driver for bool.js",
   "main": "index.js",
   "scripts": {
@@ -19,7 +19,6 @@
   },
   "license": "GPL-3.0",
   "dependencies": {
-    "booljs-api": "^0.1.3",
     "async": "^1.4.2"
   },
   "devDependencies": {
