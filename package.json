@@ -1,10 +1,10 @@
 {
   "name": "booljs-nomodel",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "description": "No database driver for bool.js",
   "main": "index.js",
   "scripts": {
-      "test": "mocha --recursive --timeout 5000 test"
+      "test": "NODE_ENV=test mocha --recursive --timeout 5000 test"
   },
   "keywords": [
     "bool.js",

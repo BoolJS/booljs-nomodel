@@ -1,4 +1,4 @@
-/* global describe, before, it */
+/* global describe, before, it */ /* jshint -W030 */
 'use strict';
 
 describe('Dog', function () {
@@ -11,10 +11,13 @@ describe('Dog', function () {
     chai.use(asPromised);
     var expect      = chai.expect;
 
-    before(function () {
-        return booljs('com.example.api', [ require.resolve('..') ])
-        .setBase('example').setDatabaseLoader('booljs-nomodel')
-        .run().then(function (api) {
+    before(() => {
+        return (
+            booljs('com.example.api', [ require.resolve('..') ])
+            .setBase('example')
+            .setDatabaseLoader('booljs-nomodel')
+            .run()
+        ).then(function (api) {
             app = api.app;
             Dog = new app.models.Dog();
             dogDao = new app.dao.Dog();
@@ -23,31 +26,32 @@ describe('Dog', function () {
         });
     });
 
-    describe('Model', function () {
+    describe('Plugin', () => {
 
-        it('retrieves an empty list', function () {
+        it('Model template should retrieve the model file', () => {
+            var plugin = require('..');
+            expect(plugin.modelTemplate()).to.exist;
+        });
+    });
+
+    describe('Model', () => {
+        it('retrieves an empty list', () => {
             return expect(Dog.list()).to.eventually.have.length(0);
         });
-
     });
 
-    describe('DAO', function () {
-
-        it('retrieves an empty list', function () {
+    describe('DAO', () => {
+        it('retrieves an empty list', () => {
             return expect(dogDao.list()).to.eventually.have.length(0);
         });
-
     });
 
-    describe('Controller', function () {
+    describe('Controller', () => {
 
-        it('retrieves an empty list', function () {
-
-            return agent.get('/dog').expect(200).then(function (response) {
+        it('retrieves an empty list', () => {
+            return agent.get('/dog').expect(200).then((response) => {
                 expect(response.body.data).to.have.length(0);
             });
-
-
         });
 
     });

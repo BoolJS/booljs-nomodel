@@ -1,6 +1,8 @@
 'use strict';
 
-var async   = require('async');
+var fs      = require('fs')
+,   path    = require('path')
+,   async   = require('async');
 
 var API;
 try {
@@ -28,5 +30,13 @@ module.exports = new API.DatabaseLoader('booljs-nomodel', {
 
             next();
         });
+    },
+    modelTemplate: function () {
+        return fs.readFileSync(path.join(
+            require.resolve('.'), '../templates/model.js'
+        ));
+    },
+    modelConfiguration: function () {
+        return false;
     }
 });
