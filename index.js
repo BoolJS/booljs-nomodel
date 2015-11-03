@@ -11,6 +11,7 @@ try {
     API = require('booljs-api');
 }
 
+/** @ignore */
 module.exports = new API.DatabaseLoader('booljs-nomodel', {
     openDatabase: function (config) {
         return q.resolve();
