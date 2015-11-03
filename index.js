@@ -11,12 +11,11 @@ try {
     API = require('booljs-api');
 }
 
-/** @ignore */
 module.exports = new API.DatabaseLoader('booljs-nomodel', {
-    openDatabase: function (config) {
+    /** @ignore */ openDatabase: function (config) {
         return q.resolve();
     },
-    fetchModels: function (_instance, models) {
+    /** @ignore */ fetchModels: function (_instance, models) {
         var fetch = q.nbind(async.forEachOfSeries, async);
 
         return fetch(models, function (path, model, next) {
@@ -32,12 +31,12 @@ module.exports = new API.DatabaseLoader('booljs-nomodel', {
             next();
         });
     },
-    modelTemplate: function () {
+    /** @ignore */ modelTemplate: function () {
         return fs.readFileSync(path.join(
             require.resolve('.'), '../templates/model.js'
         ));
     },
-    modelConfiguration: function () {
+    /** @ignore */ modelConfiguration: function () {
         return false;
     }
 });
