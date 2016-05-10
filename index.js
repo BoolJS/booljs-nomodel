@@ -4,18 +4,20 @@ var fs      = require('fs')
 ,   path    = require('path')
 ,   async   = require('async');
 
-var API;
-try {
-    API = require('bool.js/api');
-} catch (e) {
-    API = require('booljs-api');
-}
+var API = require('booljs-api');
 
-module.exports = new API.DatabaseLoader('booljs-nomodel', {
-    /** @ignore */ openDatabase: function (config) {
+module.exports = class BoolJSNoModel extends API.DatabaseLoader{
+    constructor() {
+        super('booljs-nomodel');
+    }
+
+    /** @ignore */
+    openDatabase(config) {
         return q.resolve();
-    },
-    /** @ignore */ fetchModels: function (_instance, models) {
+    }
+
+    /** @ignore */
+    fetchModels(_instance, models) {
         var fetch = q.nbind(async.forEachOfSeries, async);
 
         return fetch(models, function (path, model, next) {
@@ -30,13 +32,16 @@ module.exports = new API.DatabaseLoader('booljs-nomodel', {
 
             next();
         });
-    },
-    /** @ignore */ modelTemplate: function () {
+    }
+    /** @ignore */
+    modelTemplate() {
         return fs.readFileSync(path.join(
             require.resolve('.'), '../templates/model.js'
         ));
-    },
-    /** @ignore */ modelConfiguration: function () {
+    }
+
+    /** @ignore */
+    modelConfiguration() {
         return false;
     }
-});
+};
