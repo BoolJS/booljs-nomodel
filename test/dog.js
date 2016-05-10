@@ -29,8 +29,8 @@ describe('Dog', function () {
     describe('Plugin', () => {
 
         it('Model template should retrieve the model file', () => {
-            var plugin = require('..');
-            expect(plugin.modelTemplate()).to.exist;
+            var Plugin = require('..');
+            expect(new Plugin().modelTemplate()).to.exist;
         });
     });
 
