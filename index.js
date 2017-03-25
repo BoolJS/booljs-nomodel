@@ -8,7 +8,7 @@ var API = require('booljs.api');
 
 module.exports = class BoolJSNoModel extends API.DatabaseLoader{
     constructor() {
-        super('booljs-nomodel');
+        super('booljs.nomodel');
     }
 
     /** @ignore */
