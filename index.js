@@ -4,7 +4,7 @@ var fs      = require('fs')
 ,   path    = require('path')
 ,   async   = require('async');
 
-var API = require('booljs-api');
+var API = require('bools.api');
 
 module.exports = class BoolJSNoModel extends API.DatabaseLoader{
     constructor() {
