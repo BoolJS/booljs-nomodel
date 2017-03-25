@@ -2,7 +2,7 @@
 'use strict';
 
 describe('Dog', function () {
-    var booljs      = require('bool.js')
+    var booljs      = require('booljs')
     ,   chai        = require('chai')
     ,   asPromised  = require('chai-as-promised')
     ,   supertest   = require('supertest-as-promised')
@@ -15,7 +15,7 @@ describe('Dog', function () {
         return (
             booljs('com.example.api', [ require.resolve('..') ])
             .setBase('example')
-            .setDatabaseLoader('booljs-nomodel')
+            .setDatabaseLoader('booljs.nomodel')
             .run()
         ).then(function (api) {
             app = api.app;
