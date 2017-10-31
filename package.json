@@ -1,6 +1,6 @@
 {
   "name": "booljs.nomodel",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "No database driver for bool.js",
   "main": "index.js",
   "scripts": {
@@ -19,15 +19,23 @@
   },
   "license": "GPL-3.0",
   "dependencies": {
-    "async": "^1.4.2"
+    "async": "^1.4.2",
+    "booljs": "file:../booljs"
   },
   "peerDependencies": {
-    "booljs.api": "0.4.x"
+    "booljs.api": "0.5.x"
   },
   "devDependencies": {
-    "chai": "^3.5.0",
-    "chai-as-promised": "^6.0.0",
-    "mocha": "^3.2.0",
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "cross-env": "^5.0.1",
+    "eslint": "^4.2.0",
+    "eslint-config-standard": "^10.2.1",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-node": "^5.1.0",
+    "eslint-plugin-promise": "^3.5.0",
+    "eslint-plugin-standard": "^3.0.1",
+    "mocha": "^4.0.1",
     "supertest": "^3.0.0",
     "supertest-as-promised": "^4.0.2"
   },
