@@ -19,9 +19,6 @@
     "url": "http://community.gentebool.com/pandres95"
   },
   "license": "GPL-3.0",
-  "dependencies": {
-    "async": "^1.4.2"
-  },
   "peerDependencies": {
     "booljs.api": "0.5.x"
   },
