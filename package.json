@@ -4,6 +4,7 @@
   "description": "No database driver for bool.js",
   "main": "index.js",
   "scripts": {
+    "pretest": "eslint **/*.js",
     "test": "NODE_ENV=test mocha --recursive --timeout 5000 test"
   },
   "keywords": [
