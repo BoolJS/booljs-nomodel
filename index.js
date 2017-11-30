@@ -16,7 +16,7 @@ module.exports = class BoolJSNoModel extends DatabaseLoader {
     modelClass () { return NoModel; }
 
     /** @ignore */
-    async fetchModels (connection, Model, instance) {
+    async fetchModels (instance, name, Model) {
         let modelClass = this.modelClass();
         return class extends modelClass {
             constructor (...params) {
